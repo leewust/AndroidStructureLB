@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.app.liliuhuan.armstest.app.convert.CustomGsonConverterFactory;
 import com.app.liliuhuan.mylibrary.di.module.ClientModule;
-import com.app.liliuhuan.mylibrary.utils.ArmsUtils;
+import com.app.liliuhuan.mylibrary.utils.common.CommonUtil;
 
 import retrofit2.Retrofit;
 
@@ -17,6 +17,6 @@ import retrofit2.Retrofit;
 public class KRetrofitConfiguration implements ClientModule.RetrofitConfiguration {
     @Override
     public void configRetrofit(Context context, Retrofit.Builder builder) {
-        builder.addConverterFactory(CustomGsonConverterFactory.create(ArmsUtils.obtainAppComponentFromContext(context).gson()));
+        builder.addConverterFactory(CustomGsonConverterFactory.create(CommonUtil.obtainAppComponentFromContext(context).gson()));
     }
 }

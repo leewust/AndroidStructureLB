@@ -11,4 +11,5 @@ public interface AppConfig {
     String BANNER_URL = "BannerInfo/index";
 
     String DoMainName_CUSTOM = "custom_url";
+    int HTTP_SUCCESS = 0;
 }

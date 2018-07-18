@@ -29,7 +29,7 @@ import com.app.liliuhuan.mylibrary.delegate.activity.ActivityDelegateImpl;
 import com.app.liliuhuan.mylibrary.delegate.activity.IActivity;
 import com.app.liliuhuan.mylibrary.http.AppManager;
 import com.app.liliuhuan.mylibrary.http.config.ConfigModule;
-import com.app.liliuhuan.mylibrary.utils.Preconditions;
+import com.app.liliuhuan.mylibrary.utils.precondition.Preconditions;
 
 import java.util.List;
 import javax.inject.Inject;

@@ -2,7 +2,7 @@ package com.app.liliuhuan.armstest.app.util;
 
 import com.app.liliuhuan.mylibrary.base.mvp.IView;
 import com.app.liliuhuan.mylibrary.http.error.ApiRetryFunc;
-import com.app.liliuhuan.mylibrary.utils.RxLifecycleUtils;
+import com.app.liliuhuan.mylibrary.utils.lifecycle.RxLifecycleUtil;
 
 import io.reactivex.ObservableTransformer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -31,7 +31,7 @@ public class ApiTransformer {
                         RETRY_MILLIS))
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .compose(RxLifecycleUtils.bindToLifecycle(view));
+                .compose(RxLifecycleUtil.bindToLifecycle(view));
     }
 
     public static <T> ObservableTransformer<T, T> norTransformer(IView view, final int retryCount, final int retryDelayMillis) {
@@ -40,7 +40,7 @@ public class ApiTransformer {
                 .retryWhen(new ApiRetryFunc(retryCount, retryDelayMillis))
                 .subscribeOn(AndroidSchedulers.mainThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .compose(RxLifecycleUtils.bindToLifecycle(view));
+                .compose(RxLifecycleUtil.bindToLifecycle(view));
     }
 
     public static <T> ObservableTransformer<T, T> norTransformer() {

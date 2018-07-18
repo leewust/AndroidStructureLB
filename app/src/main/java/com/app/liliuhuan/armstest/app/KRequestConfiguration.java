@@ -3,12 +3,7 @@ package com.app.liliuhuan.armstest.app;
 import android.content.Context;
 
 import com.app.liliuhuan.mylibrary.http.GlobalHttpHandler;
-import com.app.liliuhuan.mylibrary.utils.Check;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import okhttp3.FormBody;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;

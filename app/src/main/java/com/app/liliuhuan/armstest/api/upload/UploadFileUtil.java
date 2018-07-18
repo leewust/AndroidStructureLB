@@ -2,7 +2,7 @@ package com.app.liliuhuan.armstest.api.upload;
 
 import android.text.TextUtils;
 
-import com.app.liliuhuan.mylibrary.utils.ArmsUtils;
+import com.app.liliuhuan.mylibrary.utils.common.CommonUtil;
 
 import java.io.File;
 import java.util.HashMap;
@@ -45,8 +45,8 @@ public class UploadFileUtil {
         MultipartBody.Part body = MultipartBody.Part.createFormData("aFile", file.getName(), requestFile);
         String descriptionString = "file";
         RequestBody description = RequestBody.create(MediaType.parse("multipart/form-data"), descriptionString);
-        ArmsUtils
-                .obtainAppComponentFromContext(ArmsUtils.getAppContext())
+        CommonUtil
+                .obtainAppComponentFromContext(CommonUtil.getAppContext())
                 .repositoryManager()
                 .obtainRetrofitService(UploadService.class)
                 .uploadFile(description, body)
@@ -80,8 +80,8 @@ public class UploadFileUtil {
                 params.put("file\"; filename=\"" + i + file.getName(), requestBody);
             }
         }
-        ArmsUtils
-                .obtainAppComponentFromContext(ArmsUtils.getAppContext())
+        CommonUtil
+                .obtainAppComponentFromContext(CommonUtil.getAppContext())
                 .repositoryManager()
                 .obtainRetrofitService(UploadService.class)
                 .uploadFiles(params);

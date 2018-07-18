@@ -32,7 +32,7 @@ import com.app.liliuhuan.mylibrary.cache.CacheType;
 import com.app.liliuhuan.mylibrary.delegate.fragment.IFragment;
 import com.app.liliuhuan.mylibrary.lifecycle.fragment.FragmentLifecycleable;
 import com.app.liliuhuan.mylibrary.base.mvp.IPresenter;
-import com.app.liliuhuan.mylibrary.utils.ArmsUtils;
+import com.app.liliuhuan.mylibrary.utils.common.CommonUtil;
 import com.trello.rxlifecycle2.android.FragmentEvent;
 
 import javax.inject.Inject;
@@ -67,7 +67,7 @@ public abstract class BaseFragment<P extends IPresenter> extends Fragment implem
     @Override
     public synchronized Cache<String, Object> provideCache() {
         if (mCache == null) {
-            mCache = ArmsUtils.obtainAppComponentFromContext(getActivity()).cacheFactory().build(CacheType.FRAGMENT_CACHE);
+            mCache = CommonUtil.obtainAppComponentFromContext(getActivity()).cacheFactory().build(CacheType.FRAGMENT_CACHE);
         }
         return mCache;
     }

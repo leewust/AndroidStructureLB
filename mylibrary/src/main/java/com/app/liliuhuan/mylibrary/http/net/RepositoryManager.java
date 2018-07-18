@@ -20,7 +20,7 @@ import android.content.Context;
 
 import com.app.liliuhuan.mylibrary.cache.Cache;
 import com.app.liliuhuan.mylibrary.cache.CacheType;
-import com.app.liliuhuan.mylibrary.utils.Preconditions;
+import com.app.liliuhuan.mylibrary.utils.precondition.Preconditions;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

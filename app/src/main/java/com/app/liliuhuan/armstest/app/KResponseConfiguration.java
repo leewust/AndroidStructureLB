@@ -18,10 +18,8 @@ package com.app.liliuhuan.armstest.app;
 import android.content.Context;
 import android.net.ParseException;
 
-import com.app.liliuhuan.armstest.R;
 import com.app.liliuhuan.mylibrary.http.error.exception.ErrorCodeException;
 import com.app.liliuhuan.mylibrary.http.error.listener.ResponseErrorListener;
-import com.app.liliuhuan.mylibrary.utils.ArmsUtils;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonParseException;
 

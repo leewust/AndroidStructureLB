@@ -30,7 +30,7 @@ import com.app.liliuhuan.mylibrary.cache.CacheType;
 import com.app.liliuhuan.mylibrary.delegate.activity.IActivity;
 import com.app.liliuhuan.mylibrary.lifecycle.activity.ActivityLifecycleable;
 import com.app.liliuhuan.mylibrary.base.mvp.IPresenter;
-import com.app.liliuhuan.mylibrary.utils.ArmsUtils;
+import com.app.liliuhuan.mylibrary.utils.common.CommonUtil;
 import com.trello.rxlifecycle2.android.ActivityEvent;
 
 import javax.inject.Inject;
@@ -47,7 +47,7 @@ import me.yokeyword.fragmentation.SupportHelper;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
 
 
-import static com.app.liliuhuan.mylibrary.utils.ThirdViewUtil.convertAutoView;
+import static com.app.liliuhuan.mylibrary.utils.thirdbind.ThirdViewUtil.convertAutoView;
 
 
 /**
@@ -73,7 +73,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
     @Override
     public synchronized Cache<String, Object> provideCache() {
         if (mCache == null) {
-            mCache = ArmsUtils.obtainAppComponentFromContext(this).cacheFactory().build(CacheType.ACTIVITY_CACHE);
+            mCache = CommonUtil.obtainAppComponentFromContext(this).cacheFactory().build(CacheType.ACTIVITY_CACHE);
         }
         return mCache;
     }

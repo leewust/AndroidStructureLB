@@ -16,7 +16,7 @@ import com.app.liliuhuan.armstest.mvp.presenter.UserPresenter;
 import com.app.liliuhuan.mylibrary.base.BaseActivity;
 import com.app.liliuhuan.mylibrary.base.BaseRecyclerViewAdapter;
 import com.app.liliuhuan.mylibrary.di.component.AppComponent;
-import com.app.liliuhuan.mylibrary.utils.ArmsUtils;
+import com.app.liliuhuan.mylibrary.utils.common.CommonUtil;
 import com.paginate.Paginate;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
@@ -92,7 +92,7 @@ public class UserActivity extends BaseActivity<UserPresenter> implements UserCon
 
     private void initRecyclerView() {
         mSwipeRefreshLayout.setOnRefreshListener(this);
-        ArmsUtils.configRecyclerView(mRecyclerView, mLayoutManager);
+        CommonUtil.configRecyclerView(mRecyclerView, mLayoutManager);
     }
 
 
@@ -110,12 +110,12 @@ public class UserActivity extends BaseActivity<UserPresenter> implements UserCon
 
     @Override
     public void showMessage(@NonNull String message) {
-        ArmsUtils.snackbarText(message);
+        CommonUtil.snackbarText(message);
     }
 
     @Override
     public void launchActivity(@NonNull Intent intent) {
-        ArmsUtils.startActivity(intent);
+        CommonUtil.startActivity(intent);
     }
 
     @Override

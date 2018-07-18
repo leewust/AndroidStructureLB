@@ -27,7 +27,7 @@ import com.app.liliuhuan.mylibrary.cache.IntelligentCache;
 import com.app.liliuhuan.mylibrary.delegate.fragment.FragmentDelegate;
 import com.app.liliuhuan.mylibrary.delegate.fragment.FragmentDelegateImpl;
 import com.app.liliuhuan.mylibrary.delegate.fragment.IFragment;
-import com.app.liliuhuan.mylibrary.utils.Preconditions;
+import com.app.liliuhuan.mylibrary.utils.precondition.Preconditions;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

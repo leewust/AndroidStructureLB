@@ -14,17 +14,10 @@ import com.app.liliuhuan.mylibrary.di.scope.ActivityScope;
 import com.app.liliuhuan.mylibrary.http.AppManager;
 import com.app.liliuhuan.mylibrary.http.error.ErrorHandleSubscriber;
 import com.app.liliuhuan.mylibrary.http.error.core.RxErrorHandler;
-import com.app.liliuhuan.mylibrary.utils.ArmsUtils;
-import com.app.liliuhuan.mylibrary.utils.RxLifecycleUtils;
-
-import org.json.JSONObject;
 
 import java.util.List;
 
 import javax.inject.Inject;
-
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 
 
 @ActivityScope
@@ -100,7 +93,7 @@ public class UserPresenter extends BasePresenter<UserContract.Model, UserContrac
 
                     @Override
                     public void callBackError(int errCode, String errMsg) {
-//                        ArmsUtils.makeText(errMsg);
+//                        CommonUtils.makeText(errMsg);
                         Log.e("tag====", errMsg);
                     }
                 });

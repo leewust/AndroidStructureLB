@@ -32,7 +32,7 @@ import com.app.liliuhuan.mylibrary.di.component.DaggerAppComponent;
 import com.app.liliuhuan.mylibrary.di.module.GlobalConfigModule;
 import com.app.liliuhuan.mylibrary.http.config.ConfigModule;
 import com.app.liliuhuan.mylibrary.http.ManifestParser;
-import com.app.liliuhuan.mylibrary.utils.Preconditions;
+import com.app.liliuhuan.mylibrary.utils.precondition.Preconditions;
 
 import java.util.ArrayList;
 import java.util.List;

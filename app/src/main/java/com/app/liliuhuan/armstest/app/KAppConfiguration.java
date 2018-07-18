@@ -7,7 +7,7 @@ import com.app.liliuhuan.armstest.BuildConfig;
 import com.app.liliuhuan.armstest.api.Api;
 import com.app.liliuhuan.mylibrary.delegate.app.AppLifecycles;
 import com.app.liliuhuan.mylibrary.http.urlmanager.RetrofitUrlManager;
-import com.app.liliuhuan.mylibrary.utils.ArmsUtils;
+import com.app.liliuhuan.mylibrary.utils.common.CommonUtil;
 
 import butterknife.ButterKnife;
 import timber.log.Timber;
@@ -31,7 +31,7 @@ public class KAppConfiguration implements AppLifecycles {
         // TODO: 2018/4/27 初始化一个全局的监听器
         initContextListener();
 
-        ArmsUtils.init(application.getApplicationContext());
+        CommonUtil.init(application.getApplicationContext());
     }
 
     private void initContextListener() {

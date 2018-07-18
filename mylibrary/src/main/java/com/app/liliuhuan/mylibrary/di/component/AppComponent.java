@@ -26,7 +26,7 @@ import com.app.liliuhuan.mylibrary.di.module.GlobalConfigModule;
 import com.app.liliuhuan.mylibrary.http.AppManager;
 import com.app.liliuhuan.mylibrary.http.error.core.RxErrorHandler;
 import com.app.liliuhuan.mylibrary.http.net.IRepositoryManager;
-import com.app.liliuhuan.mylibrary.imageloader.ImageLoader;
+
 import com.google.gson.Gson;
 
 
@@ -62,9 +62,6 @@ public interface AppComponent {
 
     //RxJava 错误处理管理类
     RxErrorHandler rxErrorHandler();
-
-    //图片管理器,用于加载图片的管理类,默认使用 Glide ,使用策略模式,可在运行时替换框架
-    ImageLoader imageLoader();
 
     OkHttpClient okHttpClient();
 

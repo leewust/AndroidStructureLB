@@ -23,7 +23,7 @@ import com.app.liliuhuan.mylibrary.http.GlobalHttpHandler;
 import com.app.liliuhuan.mylibrary.http.error.core.RxErrorHandler;
 import com.app.liliuhuan.mylibrary.http.error.listener.ResponseErrorListener;
 import com.app.liliuhuan.mylibrary.http.log.RequestInterceptor;
-import com.app.liliuhuan.mylibrary.utils.DataHelper;
+import com.app.liliuhuan.mylibrary.utils.data.DataHelper;
 import com.google.gson.Gson;
 import java.io.File;
 import java.io.IOException;

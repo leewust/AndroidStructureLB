@@ -3,7 +3,7 @@ package com.app.liliuhuan.mylibrary.http.error;
 import com.app.liliuhuan.mylibrary.http.error.core.RxErrorHandler;
 import com.app.liliuhuan.mylibrary.http.error.exception.ErrorCodeException;
 import com.app.liliuhuan.mylibrary.http.response.ResponseErrorUtil;
-import com.app.liliuhuan.mylibrary.utils.Check;
+import com.app.liliuhuan.mylibrary.utils.check.Check;
 
 import io.reactivex.annotations.NonNull;
 import io.reactivex.observers.DisposableObserver;

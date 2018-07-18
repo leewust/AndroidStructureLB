@@ -18,8 +18,8 @@ package com.app.liliuhuan.mylibrary.http.log;
 import android.support.annotation.Nullable;
 
 import com.app.liliuhuan.mylibrary.http.GlobalHttpHandler;
-import com.app.liliuhuan.mylibrary.utils.CharacterHandler;
-import com.app.liliuhuan.mylibrary.utils.ZipHelper;
+import com.app.liliuhuan.mylibrary.utils.character.CharacterHandler;
+import com.app.liliuhuan.mylibrary.utils.zip.ZipHelper;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

@@ -21,7 +21,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 
-import com.app.liliuhuan.mylibrary.utils.ArmsUtils;
+import com.app.liliuhuan.mylibrary.utils.common.CommonUtil;
 
 import org.simple.eventbus.EventBus;
 
@@ -53,7 +53,7 @@ public class ActivityDelegateImpl implements ActivityDelegate {
         }
 
         //这里提供 AppComponent 对象给 BaseActivity 的子类, 用于 Dagger2 的依赖注入
-        iActivity.setupActivityComponent(ArmsUtils.obtainAppComponentFromContext(mActivity));
+        iActivity.setupActivityComponent(CommonUtil.obtainAppComponentFromContext(mActivity));
     }
 
     @Override

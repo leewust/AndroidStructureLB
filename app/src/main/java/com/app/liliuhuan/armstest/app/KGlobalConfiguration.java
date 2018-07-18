@@ -7,15 +7,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 import com.app.liliuhuan.armstest.BuildConfig;
-import com.app.liliuhuan.armstest.api.Api;
 import com.app.liliuhuan.armstest.api.AppConfig;
 import com.app.liliuhuan.mylibrary.cache.IntelligentCache;
-import com.app.liliuhuan.mylibrary.delegate.app.App;
 import com.app.liliuhuan.mylibrary.delegate.app.AppLifecycles;
 import com.app.liliuhuan.mylibrary.di.module.GlobalConfigModule;
 import com.app.liliuhuan.mylibrary.http.config.ConfigModule;
 import com.app.liliuhuan.mylibrary.http.log.RequestInterceptor;
-import com.app.liliuhuan.mylibrary.utils.ArmsUtils;
+import com.app.liliuhuan.mylibrary.utils.common.CommonUtil;
 import com.squareup.leakcanary.RefWatcher;
 
 import java.util.List;
@@ -75,7 +73,7 @@ public class KGlobalConfiguration implements ConfigModule {
 
             @Override
             public void onFragmentDestroyed(FragmentManager fm, Fragment f) {
-                ((RefWatcher) ArmsUtils
+                ((RefWatcher) CommonUtil
                         .obtainAppComponentFromContext(f.getActivity())
                         .extras()
                         .get(IntelligentCache.KEY_KEEP + RefWatcher.class.getName()))

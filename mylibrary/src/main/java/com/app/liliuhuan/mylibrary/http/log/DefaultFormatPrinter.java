@@ -17,7 +17,7 @@ package com.app.liliuhuan.mylibrary.http.log;
 
 import android.text.TextUtils;
 
-import com.app.liliuhuan.mylibrary.utils.CharacterHandler;
+import com.app.liliuhuan.mylibrary.utils.character.CharacterHandler;
 
 import java.util.List;
 

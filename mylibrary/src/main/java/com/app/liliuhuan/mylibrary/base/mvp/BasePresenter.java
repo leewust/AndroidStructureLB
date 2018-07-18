@@ -25,7 +25,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.SupportActivity;
 import android.view.View;
 
-import com.app.liliuhuan.mylibrary.utils.Preconditions;
+import com.app.liliuhuan.mylibrary.utils.precondition.Preconditions;
 import com.trello.rxlifecycle2.RxLifecycle;
 
 import org.simple.eventbus.EventBus;

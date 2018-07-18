@@ -24,7 +24,7 @@ import com.app.liliuhuan.mylibrary.delegate.app.App;
 import com.app.liliuhuan.mylibrary.delegate.app.AppDelegate;
 import com.app.liliuhuan.mylibrary.delegate.app.AppLifecycles;
 import com.app.liliuhuan.mylibrary.di.component.AppComponent;
-import com.app.liliuhuan.mylibrary.utils.Preconditions;
+import com.app.liliuhuan.mylibrary.utils.precondition.Preconditions;
 
 
 /**

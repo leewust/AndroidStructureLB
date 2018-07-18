@@ -18,7 +18,7 @@ package com.app.liliuhuan.mylibrary.base;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.app.liliuhuan.mylibrary.utils.ThirdViewUtil;
+import com.app.liliuhuan.mylibrary.utils.thirdbind.ThirdViewUtil;
 import com.zhy.autolayout.utils.AutoUtils;
 
 /**

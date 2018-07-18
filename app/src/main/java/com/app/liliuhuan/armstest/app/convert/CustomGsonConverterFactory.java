@@ -1,5 +1,6 @@
 package com.app.liliuhuan.armstest.app.convert;
 
+import com.app.liliuhuan.mylibrary.utils.gson.GsonUtil;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
@@ -21,7 +22,7 @@ public class CustomGsonConverterFactory extends Converter.Factory {
     }
 
     public static CustomGsonConverterFactory create() {
-        return create(new Gson());
+        return create(GsonUtil.getInstance());
     }
 
     public static CustomGsonConverterFactory create(Gson gson) {
