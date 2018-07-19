@@ -5,6 +5,7 @@ import com.app.liliuhuan.Constants;
 import com.app.liliuhuan.net.gsonconvert.GsonConverterFactory;
 import com.app.liliuhuan.net.interceptor.CommonInterceptor;
 import com.app.liliuhuan.net.interceptor.HeaderInterceptor;
+import com.app.liliuhuan.net.interceptor.LogInterceptor;
 import com.app.liliuhuan.net.jsonconvert.JsonConverterFactory;
 
 import java.net.Proxy;
@@ -25,6 +26,7 @@ public class RetrofitUtil {
                 .retryOnConnectionFailure(true)
                 .addInterceptor(new CommonInterceptor())
                 .addInterceptor(new HeaderInterceptor())
+                .addInterceptor(new LogInterceptor())
                 .connectTimeout(5, TimeUnit.SECONDS)
                 .readTimeout(10, TimeUnit.SECONDS)
                 .proxy(Proxy.NO_PROXY)

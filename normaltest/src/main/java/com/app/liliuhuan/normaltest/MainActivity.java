@@ -32,44 +32,44 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void prepareData() {
         super.prepareData();
-        HttpUtil.getInstance().getUserType(new IRequestCallBack() {
-            @Override
-            public void onStartLoading() {
-                showLoadingDialog();
-            }
+//        HttpUtil.getInstance().getUserType(new IRequestCallBack() {
+//            @Override
+//            public void onStartLoading() {
+//                showLoadingDialog();
+//            }
+//
+//            @Override
+//            public void onSuccess(String result) {
+//                dismissLoadingDialog();
+//             //   ToastUtil.showToast(result);
+//            }
+//
+//            @Override
+//            public void onError(String error) {
+//                dismissLoadingDialog();
+//                ToastUtil.showToast(error);
+//            }
+//        });
 
-            @Override
-            public void onSuccess(String result) {
-                dismissLoadingDialog();
-             //   ToastUtil.showToast(result);
-            }
-
-            @Override
-            public void onError(String error) {
-                dismissLoadingDialog();
-                ToastUtil.showToast(error);
-            }
-        });
-
-        HttpUtil.getInstance().getUserType2(new IGsonRequestCallBack<List<UserCateBean>>() {
-            @Override
-            public void onStartLoading() {
-
-            }
-
-            @Override
-            public void onSuccess(List<UserCateBean> result) {
-                if (result != null && !result.isEmpty()){
-                 //   Log.e("tag==",result.toString());
-                }
-            }
-
-            @Override
-            public void onError(String error) {
-
-            }
-        });
-
+//        HttpUtil.getInstance().getUserType2(new IGsonRequestCallBack<List<UserCateBean>>() {
+//            @Override
+//            public void onStartLoading() {
+//
+//            }
+//
+//            @Override
+//            public void onSuccess(List<UserCateBean> result) {
+//                if (result != null && !result.isEmpty()){
+//                 //   Log.e("tag==",result.toString());
+//                }
+//            }
+//
+//            @Override
+//            public void onError(String error) {
+//
+//            }
+//        });
+//
 
         HttpUtil.getInstance().getBanners(new IGsonRequestCallBack() {
             @Override
