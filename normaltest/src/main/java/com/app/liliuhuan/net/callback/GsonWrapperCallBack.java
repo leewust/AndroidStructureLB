@@ -1,12 +1,9 @@
-package com.app.liliuhuan.net.callback.json;
+package com.app.liliuhuan.net.callback;
 
 
 import android.util.Log;
 
-
 import com.app.liliuhuan.normallibrary.utils.common.ToastUtil;
-
-import org.json.JSONObject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -18,11 +15,11 @@ import retrofit2.Response;
  * @version:1.0.0
  * @description:
  */
-public class WrapperCallBack<T> implements Callback<T> {
+public class GsonWrapperCallBack<T> implements Callback<T> {
 
-    private IRequestCallBack callback;
+    private IGsonRequestCallBack callback;
 
-    public WrapperCallBack(IRequestCallBack callback) {
+    public GsonWrapperCallBack(IGsonRequestCallBack callback) {
         this.callback = callback;
         if (null != this.callback) callback.onStartLoading();
     }
@@ -33,23 +30,9 @@ public class WrapperCallBack<T> implements Callback<T> {
         String url = call.request().url().toString();
         try {
             if (response.isSuccessful() && response.code() == 200) {
-                Log.e("url==response==",response.body().toString());
-                Object obj = response.body();
-                if (null != obj) {
-                    String s = obj.toString();
-                    JSONObject jsonObject= new JSONObject(s);
-                    int code = jsonObject.optInt("code");
-                    if (code == 1){
-                        String optString = jsonObject.optString("data");
-                        if (null != callback)
-                            callback.onSuccess(optString);
-                    }else {
-                        if (url.contains("Other/receipt") || url.contains("ApplyInterview/checkHelp")){
-                            if (null != callback) callback.onError(jsonObject.optString("data"));
-                        }else {
-                            if (null != callback) callback.onError(jsonObject.optString("msg"));
-                        }
-                    }
+                T body = response.body();
+                if (null != body) {
+                   callback.onSuccess(body);
                 }else {
                     if (null != callback) callback.onError(response.message());
                 }

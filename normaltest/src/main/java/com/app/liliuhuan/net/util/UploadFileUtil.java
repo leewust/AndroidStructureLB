@@ -2,8 +2,6 @@ package com.app.liliuhuan.net.util;
 
 import android.text.TextUtils;
 
-import com.app.liliuhuan.net.callback.json.IRequestCallBack;
-import com.app.liliuhuan.net.callback.json.WrapperCallBack;
 import com.app.liliuhuan.net.retrofit.RetrofitUtil;
 import com.app.liliuhuan.net.service.UploadService;
 import com.app.liliuhuan.normallibrary.utils.common.ToastUtil;
@@ -51,22 +49,22 @@ public class UploadFileUtil {
         RequestBody description = RequestBody.create(MediaType.parse("multipart/form-data"), descriptionString);
         UploadService service = RetrofitUtil.getInstance().createService(UploadService.class);
         Call<ResponseBody> call = service.uploadFile(description, body);
-        call.enqueue(new WrapperCallBack<ResponseBody>(new IRequestCallBack() {
-            @Override
-            public void onStartLoading() {
-
-            }
-
-            @Override
-            public void onSuccess(String result) {
-
-            }
-
-            @Override
-            public void onError(String error) {
-                uploadCallBack.uploadFailure(error);
-            }
-        }));
+//        call.enqueue(new WrapperCallBack<ResponseBody>(new IRequestCallBack() {
+//            @Override
+//            public void onStartLoading() {
+//
+//            }
+//
+//            @Override
+//            public void onSuccess(String result) {
+//
+//            }
+//
+//            @Override
+//            public void onError(String error) {
+//                uploadCallBack.uploadFailure(error);
+//            }
+//        }));
         return call;
     }
 
@@ -91,22 +89,22 @@ public class UploadFileUtil {
 
         UploadService service = RetrofitUtil.getInstance().createService(UploadService.class);
         Call<String> call = service.uploadFiles(params);
-        call.enqueue(new WrapperCallBack<String>(new IRequestCallBack() {
-            @Override
-            public void onStartLoading() {
-
-            }
-
-            @Override
-            public void onSuccess(String result) {
-
-            }
-
-            @Override
-            public void onError(String error) {
-                uploadCallBack.uploadFailure(error);
-            }
-        }));
+//        call.enqueue(new WrapperCallBack<String>(new IRequestCallBack() {
+//            @Override
+//            public void onStartLoading() {
+//
+//            }
+//
+//            @Override
+//            public void onSuccess(String result) {
+//
+//            }
+//
+//            @Override
+//            public void onError(String error) {
+//                uploadCallBack.uploadFailure(error);
+//            }
+//        }));
         return call;
     }
 

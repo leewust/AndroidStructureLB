@@ -1,23 +1,11 @@
 package com.app.liliuhuan.net;
-
-import android.util.Log;
-
 import com.app.liliuhuan.bean.UserCateBean;
-import com.app.liliuhuan.net.callback.gson.GsonWrapperCallBack;
-import com.app.liliuhuan.net.callback.gson.IGsonRequestCallBack;
-import com.app.liliuhuan.net.callback.json.IRequestCallBack;
-import com.app.liliuhuan.net.callback.json.WrapperCallBack;
+import com.app.liliuhuan.net.callback.GsonWrapperCallBack;
+import com.app.liliuhuan.net.callback.IGsonRequestCallBack;
 import com.app.liliuhuan.net.retrofit.RetrofitUtil;
 import com.app.liliuhuan.net.service.HttpService;
-
-import org.json.JSONObject;
-
-
 import java.util.List;
-
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * @author: liliuhuan
@@ -38,20 +26,6 @@ public class HttpUtil {
         }
         return instance;
     }
-
-    /**
-     * 用户种类
-     *
-     * @param callBack
-     * @return
-     */
-    public Call<JSONObject> getUserType(IRequestCallBack callBack) {
-        HttpService service = RetrofitUtil.getInstance().createService(HttpService.class);
-        Call<JSONObject> call = service.getUserCate();
-        call.enqueue(new WrapperCallBack<>(callBack));
-        return call;
-    }
-
 
     public Call<List<UserCateBean>> getUserType2(IGsonRequestCallBack callBack) {
         HttpService service = RetrofitUtil.getInstance().createService(HttpService.class);

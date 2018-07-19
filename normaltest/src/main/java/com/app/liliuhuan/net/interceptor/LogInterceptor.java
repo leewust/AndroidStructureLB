@@ -1,8 +1,6 @@
 package com.app.liliuhuan.net.interceptor;
 
-import android.util.Log;
-
-import com.app.liliuhuan.normallibrary.utils.common.LogUtil;
+import com.app.liliuhuan.util.LogUtil;
 
 import java.io.IOException;
 
@@ -13,13 +11,6 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okio.Buffer;
-
-/**
- * Author: lc
- * Email: rekirt@163.com
- * Date: 17-7-26
- * 日志拦截器
- */
 
 public class LogInterceptor implements Interceptor {
 

@@ -10,10 +10,6 @@ import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
-
-/**
- * 请求拦截器（配置统一请求参数）
- */
 public class CommonInterceptor implements Interceptor {
 
     public CommonInterceptor() {

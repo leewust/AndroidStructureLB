@@ -1,4 +1,4 @@
-package com.app.liliuhuan.net.callback.gson;
+package com.app.liliuhuan.net.callback;
 
 /**
  * @author: liliuhuan

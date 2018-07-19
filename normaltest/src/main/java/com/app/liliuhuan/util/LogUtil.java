@@ -1,6 +1,9 @@
-package com.app.liliuhuan.normallibrary.utils.common;
+package com.app.liliuhuan.util;
 
+import android.os.Build;
 import android.util.Log;
+
+import com.app.liliuhuan.normaltest.BuildConfig;
 
 /**
  * log 工具类
@@ -10,7 +13,7 @@ import android.util.Log;
  */
 public final class LogUtil {
 
-	private static boolean sIsLogEnabled = true;// 是否打开LOG
+	private static boolean sIsLogEnabled = BuildConfig.DEBUG_APK;// 是否打开LOG
 
 	private static String sApplicationTag = "MYTAG";// LOG默认TAG
  
@@ -126,8 +129,8 @@ public final class LogUtil {
 
 	public static void e(String tag, String msg) {
 		if (sIsLogEnabled) {
-			Log.e(tag, getContent(getCurrentStackTraceElement())
-					+ ">" + msg);
+			Log.e(tag, "------>"+getContent(getCurrentStackTraceElement())
+					+ "----->" + msg);
 		}
 	}
 

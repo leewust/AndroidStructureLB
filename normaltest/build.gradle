@@ -12,7 +12,20 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
-
+    signingConfigs {
+        debug {
+            storeFile file("../fskKey.jks")
+            storePassword "123456"
+            keyAlias "xdf@"
+            keyPassword "123456"
+        }
+        release {
+            storeFile file("../fskKey.jks")
+            storePassword "123456"
+            keyAlias "xdf@"
+            keyPassword "123456"
+        }
+    }
     buildTypes {
         debug {
             // 1 : 开发环境  2：正式环境
@@ -21,7 +34,7 @@ android {
             buildConfigField "boolean", "DEBUG_LOG", "true"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
+            signingConfig signingConfigs.debug
             manifestPlaceholders = [
                     UMENG_CHANNEL: "DEVELOP",
                     UMENG_APPKEY : "5b3c62e8b27b0a2422000126"
@@ -35,7 +48,7 @@ android {
             buildConfigField "boolean", "DEBUG_LOG", "false"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
+            signingConfig signingConfigs.release
             manifestPlaceholders = [
                     UMENG_CHANNEL: "DEVELOP",
                     UMENG_APPKEY : "5b3c62e8b27b0a2422000126"
@@ -52,6 +65,32 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
     }
 
+    flavorDimensions "default"
+    productFlavors {
+        official {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "official"]
+        }
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            variant.productFlavors.each { flavor ->
+                def project = "demo"
+                def separator = "_"
+                def buildType = variant.variantData.variantConfiguration.buildType.name
+                def versionName = variant.versionName
+                def versionCode = variant.versionCode
+                def date = new Date()
+                def formattedDate = date.format('yyyyMMdd')
+
+                def apkName = project + separator + "v" + versionName + separator + versionCode + separator + buildType + separator + flavor.name + ".apk"
+                if (buildType == "release") {
+                    apkName = project + separator + "v" + versionName + separator + versionCode + separator + buildType + separator + flavor.name + separator + formattedDate + ".apk"
+                }
+
+                output.outputFileName = apkName
+            }
+        }
+    }
 
 }
 

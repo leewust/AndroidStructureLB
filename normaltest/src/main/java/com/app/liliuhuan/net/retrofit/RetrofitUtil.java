@@ -6,7 +6,7 @@ import com.app.liliuhuan.net.gsonconvert.GsonConverterFactory;
 import com.app.liliuhuan.net.interceptor.CommonInterceptor;
 import com.app.liliuhuan.net.interceptor.HeaderInterceptor;
 import com.app.liliuhuan.net.interceptor.LogInterceptor;
-import com.app.liliuhuan.net.jsonconvert.JsonConverterFactory;
+
 
 import java.net.Proxy;
 import java.util.concurrent.TimeUnit;
@@ -34,7 +34,6 @@ public class RetrofitUtil {
 
         helper = new Retrofit.Builder()
                 .client(client)
-               // .addConverterFactory(JsonConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(Constants.baseUrl)
                 .build();

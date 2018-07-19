@@ -6,13 +6,6 @@ import java.io.IOException;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
-
-/**
- * @author: liliuhuan
- * @date：
- * @version:1.0.0
- * @description: 
- */
 public class HeaderInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
