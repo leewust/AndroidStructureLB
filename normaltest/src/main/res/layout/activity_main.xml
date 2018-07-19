@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="mvp" />
+    <include layout="@layout/custom_tool_bar" />
 
-    <Button
-        android:id="@+id/btn2"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="NORMAL" />
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="NORMAL LIBRARY!" />
+
 </LinearLayout>

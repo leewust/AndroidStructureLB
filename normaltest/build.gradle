@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        debug {
+            // 1 : 开发环境  2：正式环境
+            buildConfigField "int", "URL_TAG", "1"
+            buildConfigField "boolean", "DEBUG_APK", "true"
+            buildConfigField "boolean", "DEBUG_LOG", "true"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            manifestPlaceholders = [
+                    UMENG_CHANNEL: "DEVELOP",
+                    UMENG_APPKEY : "5b3c62e8b27b0a2422000126"
+            ]
+
+        }
+        release {
+            // 1 : 开发环境  2：正式环境
+            buildConfigField "int", "URL_TAG", "2"
+            buildConfigField "boolean", "DEBUG_APK", "false"
+            buildConfigField "boolean", "DEBUG_LOG", "false"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            manifestPlaceholders = [
+                    UMENG_CHANNEL: "DEVELOP",
+                    UMENG_APPKEY : "5b3c62e8b27b0a2422000126"
+            ]
+        }
+    }
+    buildscript {
+        repositories {
+            jcenter()
+        }
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':normallibrary')
+}
