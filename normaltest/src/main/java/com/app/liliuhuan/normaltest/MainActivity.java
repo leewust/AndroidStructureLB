@@ -1,6 +1,8 @@
 package com.app.liliuhuan.normaltest;
 
+import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.app.liliuhuan.bean.UserCateBean;
 import com.app.liliuhuan.net.HttpUtil;
@@ -9,8 +11,14 @@ import com.app.liliuhuan.normallibrary.base.BaseActivity;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends BaseActivity {
 
+
+    @BindView(R.id.tv_show)
+    TextView tvShow;
 
     @Override
     public boolean useToolBar() {
@@ -25,6 +33,8 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initView() {
         setToolBarTitle("normal");
+
+        tvShow.setText("normal_test ");
     }
 
     @Override
@@ -40,8 +50,8 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onSuccess(List<UserCateBean> result) {
-                if (result != null && !result.isEmpty()){
-                 //   Log.e("tag==",result.toString());
+                if (result != null && !result.isEmpty()) {
+                    //   Log.e("tag==",result.toString());
                 }
             }
 
@@ -60,8 +70,8 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onSuccess(Object result) {
-                if (result != null ){
-                    Log.e("tag==",result.toString());
+                if (result != null) {
+                    Log.e("tag==", result.toString());
                 }
             }
 
@@ -70,5 +80,12 @@ public class MainActivity extends BaseActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
     }
 }

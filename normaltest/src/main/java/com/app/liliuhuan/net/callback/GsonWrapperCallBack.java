@@ -26,7 +26,7 @@ public class GsonWrapperCallBack<T> implements Callback<T> {
 
     @Override
     public void onResponse(Call<T> call, Response<T> response) {
-        Log.e("url==",call.request().url().toString());
+//        Log.e("url==",call.request().url().toString());
         String url = call.request().url().toString();
         try {
             if (response.isSuccessful() && response.code() == 200) {

@@ -8,11 +8,8 @@ import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
 import android.view.View;
 
-
 import com.app.liliuhuan.normallibrary.BaseApp;
 import com.app.liliuhuan.normallibrary.R;
-import com.app.liliuhuan.normallibrary.utils.appmanager.IntentUtil;
-import com.app.liliuhuan.normallibrary.utils.common.CommonUtil;
 import com.app.liliuhuan.normallibrary.utils.metrics.MetricsUtil;
 import com.app.liliuhuan.normallibrary.views.toolbar.CustomToolbar;
 

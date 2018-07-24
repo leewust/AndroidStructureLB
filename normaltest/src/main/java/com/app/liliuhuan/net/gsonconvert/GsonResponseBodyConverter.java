@@ -30,7 +30,6 @@ public class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> 
     @Override
     public T convert(ResponseBody value) throws IOException {
         String response = value.string();
-        Log.e("response==",response);
         BaseBean apiResult = gson.fromJson(response, BaseBean.class);
         if (apiResult.getCode() == 1) {
             if (mType != null && mType.equals(String.class)) {

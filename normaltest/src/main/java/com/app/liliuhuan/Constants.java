@@ -13,9 +13,9 @@ public class Constants {
     public static String baseUrl = "http://demo.wukzk.com/limeng/pdzp/public/api/";
     static {
         if (BuildConfig.DEBUG_APK) {  /*如果是开发模式，则使用测试环境*/
-            baseUrl = "http://demo.wukzk.com/limeng/pdzp/public/api/";
+            baseUrl = "http://117.50.44.242/pdzp/public/api/";
         } else {                        /*如果上线模式，则使用正式环境  */
-            baseUrl = "http://demo.wukzk.com/limeng/pdzp/public/api/";
+            baseUrl = "http://117.50.44.242/pdzp/public/api/";
         }
     }
 

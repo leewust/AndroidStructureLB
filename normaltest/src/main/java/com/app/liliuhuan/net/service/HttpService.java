@@ -7,13 +7,20 @@ import com.app.liliuhuan.bean.UserCateBean;
 import org.json.JSONObject;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Observable;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
+import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 /**
  * 接口管理
@@ -40,4 +47,12 @@ public interface HttpService {
 
     @GET(Constants.URL_BANNER_LIST)
     Call<List<UserCateBean>> getBanners();
+
+
+    @GET
+    Call<String> getHttpList(@Url String path, @QueryMap Map<String, Object> map);
+
+    @FormUrlEncoded
+    @POST
+    Call<JSONObject> postHttpList(@FieldMap Map<String, Object> map);
 }

@@ -3,7 +3,7 @@ package com.app.liliuhuan.net.retrofit;
 
 import com.app.liliuhuan.Constants;
 import com.app.liliuhuan.net.gsonconvert.GsonConverterFactory;
-import com.app.liliuhuan.net.interceptor.CommonInterceptor;
+import com.app.liliuhuan.net.interceptor.RequestInterceptor;
 import com.app.liliuhuan.net.interceptor.HeaderInterceptor;
 import com.app.liliuhuan.net.interceptor.LogInterceptor;
 
@@ -24,11 +24,11 @@ public class RetrofitUtil {
     private RetrofitUtil() {
         OkHttpClient client = new OkHttpClient.Builder()
                 .retryOnConnectionFailure(true)
-                .addInterceptor(new CommonInterceptor())
+                .addInterceptor(new RequestInterceptor())
                 .addInterceptor(new HeaderInterceptor())
                 .addInterceptor(new LogInterceptor())
-                .connectTimeout(5, TimeUnit.SECONDS)
-                .readTimeout(10, TimeUnit.SECONDS)
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .readTimeout(15, TimeUnit.SECONDS)
                 .proxy(Proxy.NO_PROXY)
                 .build();
 
