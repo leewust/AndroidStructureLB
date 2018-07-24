@@ -54,5 +54,5 @@ public interface HttpService {
 
     @FormUrlEncoded
     @POST
-    Call<JSONObject> postHttpList(@FieldMap Map<String, Object> map);
+    Call<String> postHttpList(@Url String path,@FieldMap Map<String, Object> map);
 }

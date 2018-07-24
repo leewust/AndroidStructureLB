@@ -69,6 +69,7 @@ public abstract class BaseListActivity<T> extends BaseActivity implements SwipeR
     protected void prepareData() {
         super.prepareData();
         HttpListUtil.getInstance().getHttpList(getHttpUrl(), getParams(), this);
+//        HttpListUtil.getInstance().postHttpList(getHttpUrl(), getParams(), this);
     }
 
     protected RecyclerView.LayoutManager getLayoutManager() {

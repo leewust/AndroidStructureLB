@@ -38,4 +38,11 @@ public class HttpListUtil {
         return httpList;
     }
 
+    public Call<String> postHttpList(String path,Map<String,Object> params ,IGsonRequestCallBack callBack) {
+        HttpService service = RetrofitUtil.getInstance().createService(HttpService.class);
+        Call<String> httpList = service.postHttpList(path,params);
+        httpList.enqueue(new GsonWrapperCallBack<>(callBack));
+        return httpList;
+    }
+
 }

@@ -10,7 +10,7 @@ public class UserCateBean {
 
     /**
      * id : 2
-     * name : 在职员工
+     * name : name
      * createtime : 1528429740
      * updatetime : 1529458123
      */
